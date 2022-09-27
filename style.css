@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+	--black: #000000;
+	--gray: #727272;
+	--dark-blue: #0036c1;
+	--light-blue: #3c64c9;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: 'Inter', sans-serif;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+/* Layout */
+.wrapper {
+	width: 100%;
+	max-width: 1968px;
+	padding: 0 24px;
+	margin: 0 auto;
+}
+
+.container {
+	width: 100%;
+	max-width: 1440px;
+	margin: 0 auto;
+}
+
+.flex {
+	display: flex;
+	align-items: center;
+}
+
+.flex.between {
+	justify-content: space-between;
+	gap: 64px;
+}
+
+.flex.center {
+	flex-direction: column;
+	justify-content: center;
+	gap: 16px;
+}
+
+/* SVG/IMG/ICO */
+svg {
+	transition: 0.3s ease-in-out 0s;
+}
+
+svg path {
+	transition: 0.3s ease-in-out 0s;
+}
+
+img {
+	max-width: 100%;
+}
+
+/* Text Styles */
+.title {
+	font-weight: 600;
+	color: var(--black);
+	margin-bottom: 24px;
+}
+
+.title.one {
+	font-size: 40px;
+	line-height: 48px;
+}
+
+.title.two {
+	font-size: 32px;
+	line-height: 40px;
+}
+
+.description {
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 24px;
+	color: var(--gray);
+}
+
+.description.bold {
+	font-weight: 700;
+	color: var(--black);
+}
+
+.copyright {
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 16px;
+	color: var(--black);
+}
+
+/* Logo */
+.logo {
+	transition: 0.3s ease-in-out 0s;
+}
+
+header .logo {
+	max-width: 72px;
+	max-height: 72px;
+	transition: 0.3s ease-in-out 0s;
+}
+
+footer .logo {
+	max-width: 88px;
+	max-height: 88px;
+	transition: 0.3s ease-in-out 0s;
+}
+
+.logo:hover {
+	opacity: 0.72;
+}
+
+/* Link Styles */
+.link {
+	display: inline-flex;
+	align-items: center;
+	gap: 16px;
+	text-decoration: none;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 16px;
+	color: var(--dark-blue);
+	margin-top: 24px;
+	transition: 0.3s ease-in-out 0s;
+}
+
+.link:hover {
+	color: var(--light-blue);
+}
+
+.link:hover svg path {
+	stroke: var(--light-blue);
+}
+
+.link:hover svg {
+	transform: translate(4px, -4px);
+}
+
+/* Button */
+.button {
+	text-decoration: none;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 16px;
+	color: #ffffff;
+	padding: 14px 16px;
+	background-color: var(--dark-blue);
+	border: 2px solid var(--dark-blue);
+	border-radius: 8px;
+	transition: 0.3s ease-in-out 0s;
+	cursor: pointer;
+}
+
+.button:hover {
+	background-color: transparent;
+	color: var(--dark-blue);
+}
+
+.button:hover svg path {
+	stroke: var(--dark-blue);
+}
+
+main .button:hover svg {
+	transform: rotate(180deg);
+}
+
+/* Header */
+header {
+	padding: 16px 0;
+	border-bottom: 1px solid #d9d9d9;
+	min-height: 104px;
+	max-height: 104px;
+	margin-bottom: 88px;
+}
+
+/* Main */
+.image-container {
+	position: relative;
+	width: 100%;
+	max-width: 704px;
+	max-height: 568px;
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+.image-container .box {
+	position: absolute;
+	bottom: 24px;
+	left: 24px;
+	right: 24px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 24px;
+	padding: 12px 16px;
+	background: #ffffff;
+	border-radius: 8px;
+}
+
+.description-container {
+	width: 100%;
+	max-width: 581px;
+}
+
+/* Footer */
+footer {
+	margin-top: 48px;
+	min-height: 200px;
+	max-height: 200px;
+	padding: 40px 0;
+	background-color: rgba(0, 54, 193, 0.1);
+}
+
+/* Media Queries */
+@media (max-width: 991px) {
+	main .flex {
+		flex-direction: column;
+	}
+	main .container {
+		max-width: 670px;
+	}
+	.description-container {
+		max-width: unset;
+	}
+}
+
+@media (max-width: 576px) {
+	header {
+		margin-bottom: 48px;
+	}
+	main .flex {
+		gap: 24px !important;
+	}
+	.title.one {
+		font-size: 28px;
+		line-height: 36px;
+	}
+	.title.two {
+		font-size: 24px;
+		line-height: 32px;
+		margin-bottom: 8px;
+	}
+	.description {
+		font-size: 18px;
+		line-height: 26px;
+	}
+	.image-container {
+		max-height: unset;
+	}
+	.image-container .box {
+		bottom: 8px;
+		left: auto;
+		right: 8px;
+		padding: 2px;
+	}
+	.box .button {
+		padding: 8px;
+	}
+	.box .description {
+		display: none;
+	}
+	main .button span {
+		display: none;
+	}
+}
